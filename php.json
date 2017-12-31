@@ -7,18 +7,19 @@
 		// Example:
 
 	*/
-	"Laravel - Create a PHP Unit Test Case": {
-		"prefix": "test",
+	"Create a public function": {
+		"prefix": "pub",
 		"body": [
-			"/** @test */",
-			"public function ${1:your_test_function}()",
+			"//",
+			"public function ${1:function}($2)",
 			"{",
-			"$2",
+			"    $3",
 			"}"
 		],
-		"description": "Create a PHP Unit Test Case",
+		"description": "Create a PHP Test Case",
 	},
-	"Laravel - Create a PHP Feature Test Case": {
+	/* --- Laravel Snippets --- */
+	"Laravel - Create a PHP Feature Test Class": {
 		"prefix": "testfeature",
 		"body": [
 			"namespace Tests\\Feature;",
@@ -36,6 +37,40 @@
 			"    $2",
 			"}",
 		],
-		"description": "Create a PHP Unit Test Case",
+		"description": "Create a PHP Feature Test Class",
 	},
+
+	"Laravel - Create a PHP Unit Test Class": {
+		"prefix": "testunit",
+		"body": [
+			"namespace Tests\\Unit;",
+			"",
+			"use Tests\\TestCase;",
+			"use Illuminate\\Foundation\\Testing\\DatabaseMigrations;",
+			"use Illuminate\\Foundation\\Testing\\RefreshDatabase;",
+			"",
+			"class ${1:YourTest} extends TestCase",
+			"{",
+			"",
+			"    use DatabaseMigrations;",
+			"",
+			"    $2",
+			"}",
+		],
+		"description": "Create a PHP Unit Test Class",
+	},
+
+	"Laravel - Create a PHP Test Case": {
+		"prefix": "test",
+		"body": [
+			"/** @test */",
+			"public function ${1:your_test_function}()",
+			"{",
+			"    $2",
+			"}"
+		],
+		"description": "Create a PHP Test Case",
+	},
+
+
 }
